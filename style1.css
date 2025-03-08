@@ -1,0 +1,9 @@
+body{
+    background-color: #bdb3b3;
+}
+h1{
+    border-width: 10px;
+    border-color: red;
+    border-style: solid;
+    border-radius: 20px;
+}
