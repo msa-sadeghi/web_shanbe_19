@@ -1,0 +1,31 @@
+form fieldset button{
+    background-color: rgb(100, 200, 120);
+    padding: 10PX;
+    border: none;
+    border-radius: 30PX;
+    font-weight: bolder;
+    width: 80px;
+}
+
+input[type="text"]{
+    border: 2px solid #adaaaa;
+    border-radius: 30px;
+    height: 30px;
+    width: 300px;
+    margin-left: 10px;
+}
+
+input::placeholder
+{
+    color: rgb(137, 134, 134);
+    font-size: 18px;
+    text-align: center;
+}
+
+fieldset{
+    border-radius: 20px;
+    background-color: rgb(237, 242, 243);
+}
+fieldset legend{
+    color: rgb(14, 88, 29);
+}
