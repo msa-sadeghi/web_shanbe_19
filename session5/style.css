@@ -1,0 +1,47 @@
+fieldset{
+    border: 3px solid brown;
+    background-color: bisque;
+}
+
+fieldset legend{
+    font-size: 21px;
+}
+
+fieldset label{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium',
+     'Arial Narrow', Arial, sans-serif;
+}
+
+fieldset input[type="text"],
+input[type="password"]{
+    border: none;
+    border-radius: 30px;
+    width: 50%;
+    height: 30px;
+    margin-left: 20px;
+}
+
+button{
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: greenyellow;
+}
+
+@font-face {
+    font-family: vazir;
+    src: url(../Vazirmatn-Light.woff2);
+}
+
+*{
+    font-family: vazir;
+    font-size: 32px;
+}
