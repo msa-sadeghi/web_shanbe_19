@@ -1,0 +1,66 @@
+/* p {
+    color: blue;
+}
+#first{
+    background-color: green;
+    box-shadow: 9px -6px 9px 1px rebeccapurple
+}
+.others{
+    background-color: yellow;
+}
+ul.list1 li:nth-child(odd){
+    background-color: red;
+}
+ul.list1 li:nth-child(even){
+    background-color: green;
+}
+ul.list2 li:nth-child(1){
+    background-color: blue;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: red;
+    font-weight: bold;
+    background-color: yellow;
+    border: 2px solid red;
+}
+a:visited{
+    color: black;
+    font-weight: bold;
+    background-color: yellow;
+    border: 2px solid red;
+}
+
+body{
+    background: url(../bmw.png);
+} */
+ #box1, #box2, #box3, #box4, #box5
+ {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    float: right;
+    background-color: red;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: center;
+    border: 2px dashed black;
+    padding-top: 80px;
+    
+ }
+
+ #box1{
+    transform: translate(100px, 100px);
+ }
+ #box2{
+    transform: scale(2);
+ }
+ #box3{
+    transform: rotate(45deg);
+ }
+ #box4{
+    transform: skew(20deg, 10deg);
+ }
