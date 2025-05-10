@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#head{
+    background-color: lightblue;
+    border: 3px solid black;
+}
+#left{
+    float: left;
+    width: 20%;
+    min-height: 32em;
+    border: 3px solid red;
+    background-color: yellow;
+    overflow: auto;
+}
+#center{
+    float: left;
+    width: 60%;
+    height: 32em;
+    overflow: auto;
+}
+#right{
+    border: 3px solid blue;
+    float: left;
+    width: 20%;
+    background-color: green;
+    height: 32em;
+    overflow: auto;
+}
+#footer{
+    border: 3px solid green;
+    background-color: orange;
+    clear: both;
+    text-align: center;
+}
