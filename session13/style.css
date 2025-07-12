@@ -19,11 +19,12 @@ header div{
 }
 header{
     position: relative;
-}
+    
+    }
 input[type="checkbox"]{
     display: none;
 }
-i{
+label i{
     position: absolute;
     left: 10%;
     top: 50%;
@@ -40,4 +41,55 @@ input[type="checkbox"]:checked {
 }
 input[type="checkbox"]:checked ~ label i{
     display: none;
+}
+
+body{
+    direction: rtl;
+}
+nav{
+    display: flex;
+    gap: 15px;
+    transition: transform 1s ease;
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+input[type="checkbox"]:checked ~ nav{
+    transform: translateY(-100%);
+}
+
+nav i{
+    font-size: 32px;
+    opacity: 0;
+}
+nav span{
+    opacity: 0;
+}
+
+@media screen and (max-width:600px){
+    nav{
+        justify-content: space-between;
+    }
+    nav ul{
+        display: none;
+    }
+
+    nav i{
+        opacity: 1;
+        vertical-align: -7px;
+        padding: 10px;
+    }
+    nav span{
+        opacity: 1;
+        color: rgb(118, 204, 232);
+    }
+
+    header{
+        height: 50px;
+        border-bottom: 1px solid rgb(174, 171, 171);
+    }
+    
 }
