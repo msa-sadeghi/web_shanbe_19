@@ -64,19 +64,59 @@ input[type="checkbox"]:checked ~ nav{
 nav i{
     font-size: 32px;
     opacity: 0;
+    cursor: pointer;
 }
 nav span{
     opacity: 0;
 }
 
+input#hello{
+    display: none;
+}
+main{
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+main button{
+    padding: 10px 26px;
+    background-color: rgb(81, 81, 201);
+    color: white;
+    font-size: 17px;
+    border-radius: 12px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main p a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:600px){
     nav{
         justify-content: space-between;
+        position: relative;
     }
     nav ul{
         display: none;
     }
-
     nav i{
         opacity: 1;
         vertical-align: -7px;
@@ -86,10 +126,23 @@ nav span{
         opacity: 1;
         color: rgb(118, 204, 232);
     }
-
     header{
         height: 50px;
         border-bottom: 1px solid rgb(174, 171, 171);
     }
-    
+    input#hello:checked ~ ul{
+        width: 50%;
+        border-radius: 12px;
+        padding: 10px;
+        background-color: #efefef;
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 110%;
+    }
+    input#hello:checked ~ ul li{
+        padding: 10px;
+        border-bottom: 1px solid snow;
+        cursor: pointer;
+    }
 }
