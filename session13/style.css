@@ -21,10 +21,10 @@ header{
     position: relative;
     
     }
-input[type="checkbox"]{
+input#t{
     display: none;
 }
-label i{
+label[for="t"] i{
     position: absolute;
     left: 10%;
     top: 50%;
@@ -32,14 +32,14 @@ label i{
     color: white;
     font-size: 24px;
 }
-input[type="checkbox"]:checked ~ div{
+input#t:checked ~ div{
     transform: translateY(-100%);
     /* display: none; */
 }
-input[type="checkbox"]:checked {
+input#t:checked {
     display: none;
 }
-input[type="checkbox"]:checked ~ label i{
+input#t:checked ~ label i{
     display: none;
 }
 
