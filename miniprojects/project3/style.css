@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 290px;
+    border: 2px solid red;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-responsive{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.wrapper .card{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    transition: left .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.card-header{
+    position: absolute;
+    top: 10px;
+}.card:nth-child(5){
+    left: 100vw;
+}
+.wrapper .card:nth-child(6){
+    left: 100vw;
+}
+
+.wrapper input[type="radio"]{
+    margin-top: 20px;
+    position: absolute;
+    top:100%
+}
+.wrapper input[type="radio"]:nth-child(1){
+    left: 35%;
+}
+.wrapper input[type="radio"]:nth-child(2){
+    left: 45%;
+}
+.wrapper input[type="radio"]:nth-child(3){
+    left: 55%;
+}
+
+.wrapper input[type="radio"]:nth-child(1):checked ~ div:nth-child(4){
+    left: 0;
+}
+
+
+
+ .wrapper input[type="radio"]:nth-child(2):checked ~ div:nth-child(4){
+    left: 100vw;
+}
+.wrapper input[type="radio"]:nth-child(2):checked ~ div:nth-child(5){
+    left: 0;
+}
+.wrapper input[type="radio"]:nth-child(2):checked ~ div:nth-child(6){
+    left: 100vw;
+} 
+.wrapper input[type="radio"]:nth-child(3):checked ~ div:nth-child(4){
+    left: 100vw;
+} 
+.wrapper input[type="radio"]:nth-child(3):checked ~ div:nth-child(5){
+    left: 100vw;
+} 
+.wrapper input[type="radio"]:nth-child(3):checked ~ div:nth-child(6){
+    left: 0;
+} 
