@@ -1,41 +1,33 @@
-let tempInput = document.getElementById('tempInput')
-let tempFrom = document.getElementById('tempFrom')
-let tempTo = document.getElementById('tempTo')
-let tempResult = document.getElementById('tempResult')
+// let score = 0
+// score = score + 1
+// score += 1
+// score++
+
+// console.log("123" === 123)
 
 
-function convertTemperature(){
-        let tempInputValue =  tempInput.value
-        let tempFromValue =  tempFrom.value
-        let tempToValue =  tempTo.value
-        let result
+//   &&    ||     !
 
-        if(tempFromValue == tempToValue){
-            result =  tempInputValue
-        }else if(tempFromValue == 'celsius'){
-            if(tempToValue == 'fahrenheit'){
-                result =  tempInputValue * 2
-            }else if(tempToValue == 'kelvin'){
-                result =  tempInputValue * 3
-            }
-        }
-        else if(tempFromValue == 'fahrenheit'){
-            if(tempToValue == 'celsius'){
-                result =  tempInputValue * 2
-            }else if(tempToValue == 'kelvin'){
-                result =  tempInputValue * 3
-            }
-        }
-        else if(tempFromValue == 'kelvin'){
-            if(tempToValue == 'celsius'){
-                result =  tempInputValue * 2
-            }else if(tempToValue == 'fahrenheit'){
-                result =  tempInputValue * 3
-            }
-        }
+// let name = "mary"
+// switch(name){
+//     case "sara":
+//         console.log("hello sara")
+//         break
+//     case "amir":
+//         console.log("hello amir")
+//         break
+//     default:
+//         console.log("blalalal")
+// }
 
-        tempResult.innerHTML =  result
-        tempResult.style.display = "block"
+// let isLoggedIn = false
+// let x = true
+// if(isLoggedIn){
+//     document.body.innerHTML = "<h1>Welcome</h1>"
+// }else{
+//     document.body.innerHTML = "<h1>Not Valid</h1>"
+// }
 
-
-}
+// isLoggedIn ? document.body.innerHTML = "<h1>Welcome</h1>" : 
+//         x ? document.body.innerHTML = "<h1>Not Valid</h1>" : ""
+             
