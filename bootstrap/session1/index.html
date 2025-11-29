@@ -14,34 +14,137 @@
         body{
             font-family: vazir;
         }
-        aside{
-          width: 250px;
-          background-color: black;
-          min-height: 100vh;
+        .stat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            min-height: 100vh;
+        }
     </style>
 </head>
 <body class="bg-light">
-    
     <div class="d-flex">
-      <aside class="d-none d-lg-block p-4">
-        <h1 class="text-white fs-3">داشبورد مدیریتی</h1>
-        <ul class="list-unstyled mt-5">
-          <li class="mb-4"><a class="text-white  text-decoration-none" href="">خانه</a></li>
-          <li class="mb-4"><a class="text-white  text-decoration-none" href="">محصولات</a></li>
-          <li class="mb-4"><a class="text-white  text-decoration-none" href="">کاربران</a></li>
-          <li class="mb-4"><a class="text-white  text-decoration-none" href="">تماس</a></li>
-        </ul>
-      </aside>
-      <main class="flex-grow-1">
-        <div class="d-flex justify-content-between p-4">
-          <h3>خوش آمدید</h3>
-          <button class="btn btn-primary">پروفایل</button>
+        <!-- Sidebar -->
+        <div class="sidebar p-4 d-none d-lg-block" style="width: 250px;">
+            <h3 class="mb-4">داشبورد</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3"><a href="#" class="text-white text-decoration-none">خانه</a></li>
+                <li class="mb-3"><a href="#" class="text-white text-decoration-none">آمار</a></li>
+                <li class="mb-3"><a href="#" class="text-white text-decoration-none">گزارش‌ها</a></li>
+                <li class="mb-3"><a href="#" class="text-white text-decoration-none">تنظیمات</a></li>
+            </ul>
         </div>
-      </main>
+        
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-4">
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>خوش آمدید</h1>
+                <button class="btn btn-primary">پروفایل</button>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <div class="stat-card flex-fill">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted mb-2">کاربران</p>
+                            <div class="stat-number text-primary">1,234</div>
+                        </div>
+                        <div class="bg-primary bg-opacity-10 p-3 rounded">
+                            <span class="text-primary" style="font-size: 2rem;"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card flex-fill">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted mb-2">فروش</p>
+                            <div class="stat-number text-success">۴۵۶</div>
+                        </div>
+                        <div class="bg-success bg-opacity-10 p-3 rounded">
+                            <span class="text-success" style="font-size: 2rem;"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card flex-fill">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted mb-2">سفارش‌ها</p>
+                            <div class="stat-number text-warning">789</div>
+                        </div>
+                        <div class="bg-warning bg-opacity-10 p-3 rounded">
+                            <span class="text-warning" style="font-size: 2rem;"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stat-card flex-fill">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="text-muted mb-2">درآمد</p>
+                            <div class="stat-number text-danger">۵۶M</div>
+                        </div>
+                        <div class="bg-danger bg-opacity-10 p-3 rounded">
+                            <span class="text-danger" style="font-size: 2rem;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="d-flex gap-3 flex-column flex-lg-row">
+                <!-- Main Chart Area -->
+                <div class="stat-card flex-grow-1">
+                    <h4 class="mb-3">نمودار فروش</h4>
+                    <div class="bg-light rounded" style="height: 300px;">
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <p class="text-muted">نمودار اینجا قرار می‌گیرد</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="stat-card" style="min-width: 300px;">
+                    <h5 class="mb-3">فعالیت‌های اخیر</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-primary rounded-circle" style="width: 40px; height: 40px;"></div>
+                            <div class="flex-grow-1">
+                                <p class="mb-1 fw-bold">کاربر جدید</p>
+                                <p class="text-muted small mb-0">۵ دقیقه پیش</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-success rounded-circle" style="width: 40px; height: 40px;"></div>
+                            <div class="flex-grow-1">
+                                <p class="mb-1 fw-bold">فروش جدید</p>
+                                <p class="text-muted small mb-0">۱۵ دقیقه پیش</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="bg-warning rounded-circle" style="width: 40px; height: 40px;"></div>
+                            <div class="flex-grow-1">
+                                <p class="mb-1 fw-bold">سفارش در انتظار</p>
+                                <p class="text-muted small mb-0">۳۰ دقیقه پیش</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
