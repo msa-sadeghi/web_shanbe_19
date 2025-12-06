@@ -1,62 +1,67 @@
-// function createID(){
-//     let id = 0
-//     return function(){
-//         id++
-//         return `ID-${id}`
-//     }
-// }
+// let numbers = [1, 5, 6, 8, 98]
+// let sum = numbers.reduce((pr, cr, index, arr) =>{
+//     console.log(pr, cr, index, arr)
+//     return pr + cr
 
-// const gernerateID1 =  createID()
-// console.log(gernerateID1())
-// console.log(gernerateID1())
-// console.log(gernerateID1())
+// }, 0)
 
-// const gernerateID2 =  createID()
-// console.log(gernerateID2())
-// console.log(gernerateID2())
-// console.log(gernerateID2())
+// console.log(sum)
 
-// let fruits = ["apple", "banana"]
-// console.log(fruits.length)
-// fruits.push("another1", "another2")
-// fruits.unshift("fff", "gggg")
+// let cart = [
+//     {name:"کفش", price:1000, quantity:2},
+//     {name:"کیف", price:2000, quantity:1},
+//     {name:"کتاب", price:1000, quantity:4},
+// ]
 
-// fruits.pop()
-// fruits.shift()
+// let totalPrice  = cart.reduce((t, item)=>{
+//     return t + item.price * item.quantity
+// }, 0)
 
+// console.log(totalPrice)
 
-// fruits.forEach(item => console.log(item))
+let numbers = [1, 5, 6, 8, 98]
 
-let c = [1, 0,2 ,3,4]
+let result = numbers.some(elem => elem >= 5)
+console.log(result)
 
-for(let i = 0; i < c.length; i++){
-    console.log(c[i])
-}
+let result2 = numbers.every(elem => elem >= 1)
+console.log(result2)
 
-c.forEach(item => console.log(item))
+let users = [
+    {name:"علی" , age:23},
+    {name:"سارا" , age:21},
+]
 
-for(let item of c)
-{
-    console.log(item)
-}
-
-for(let item in c){
-    console.log(c[item])
-}
-// c.splice(1, 1, 4444)
-// console.log(c)
+console.log(users.every(u => u.age >= 21))
 
 
+let x = [1,0,-1, 87, 32]
+
+console.log(x.sort((a,b)=>a-b))
+console.log(x.sort((a,b)=>b-a))
 
 
-// let myArray1 = new Array(2)
-// myArray1[0] = 12
-// myArray1[1] = 123
-// myArray1[2] = 1234
-// console.log(myArray1.length)
-// myArray1.forEach(item => console.log(item))
+// let evenNumbers = numbers.filter(n => n % 2 === 0)
+// console.log(evenNumbers)
 
-// let myArray2 = new Array("blalal", "lalalala")
+// let users = [
+//     {id : 1, username:'ali123',  email:'ali@gmail.com'},
+//     {id : 2, username:'artin123',  email:'artin@gmail.com'},
+//     {id : 3, username:'nikan123',  email:'nikan@gmail.com'},
+// ]
 
-// console.log(myArray2.length)
-// myArray2.forEach(item => console.log(item))
+// let user = users.findIndex(u=> u.username === "nikan123")
+// console.log(user)
+
+// users.splice(2,1)
+// console.log(users)
+
+// let inventory = [
+//     {name:'laptop', stock:100},
+//     {name:'mouse', stock:1000},
+//     {name:'keyboard', stock:900},
+//     {name:'tablet', stock:0},
+// ]
+
+// let outOfStock = inventory.find(item => item.stock === 0)
+// console.log(outOfStock)
