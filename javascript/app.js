@@ -1,67 +1,50 @@
-// let numbers = [1, 5, 6, 8, 98]
-// let sum = numbers.reduce((pr, cr, index, arr) =>{
-//     console.log(pr, cr, index, arr)
-//     return pr + cr
+const input = document.querySelector('input')
+const button = document.querySelector('button')
+const result = document.querySelector('.result')
+let jobs = []
+function IdGenerator(){
+    let id = 0
+    return function(){
+        id++
+        return id
+    }
+}
 
-// }, 0)
+const IdGenerator1 = IdGenerator()
+function Job(title){
+    this.title = title
+    this.id = IdGenerator1()
+}
 
-// console.log(sum)
+button.addEventListener('click', (e) => {
+    let inputValue = input.value
+    let newDiv = document.createElement('div')
+    newDiv.textContent = inputValue
+    let newJob = new Job(inputValue)
+    jobs.push(newJob)
 
-// let cart = [
-//     {name:"کفش", price:1000, quantity:2},
-//     {name:"کیف", price:2000, quantity:1},
-//     {name:"کتاب", price:1000, quantity:4},
-// ]
+    result.append(newDiv)
+    localStorage.setItem("jobs", JSON.stringify(jobs))
+})
 
-// let totalPrice  = cart.reduce((t, item)=>{
-//     return t + item.price * item.quantity
-// }, 0)
+window.onload = function(){
+    jobs = localStorage.getItem("jobs")
 
-// console.log(totalPrice)
+    jobs = JSON.parse(jobs)
+    
+    renderItems()
+}
 
-let numbers = [1, 5, 6, 8, 98]
-
-let result = numbers.some(elem => elem >= 5)
-console.log(result)
-
-let result2 = numbers.every(elem => elem >= 1)
-console.log(result2)
-
-let users = [
-    {name:"علی" , age:23},
-    {name:"سارا" , age:21},
-]
-
-console.log(users.every(u => u.age >= 21))
-
-
-let x = [1,0,-1, 87, 32]
-
-console.log(x.sort((a,b)=>a-b))
-console.log(x.sort((a,b)=>b-a))
-
-
-// let evenNumbers = numbers.filter(n => n % 2 === 0)
-// console.log(evenNumbers)
-
-// let users = [
-//     {id : 1, username:'ali123',  email:'ali@gmail.com'},
-//     {id : 2, username:'artin123',  email:'artin@gmail.com'},
-//     {id : 3, username:'nikan123',  email:'nikan@gmail.com'},
-// ]
-
-// let user = users.findIndex(u=> u.username === "nikan123")
-// console.log(user)
-
-// users.splice(2,1)
-// console.log(users)
-
-// let inventory = [
-//     {name:'laptop', stock:100},
-//     {name:'mouse', stock:1000},
-//     {name:'keyboard', stock:900},
-//     {name:'tablet', stock:0},
-// ]
-
-// let outOfStock = inventory.find(item => item.stock === 0)
-// console.log(outOfStock)
+function renderItems(){
+    
+    if(jobs !== null){
+        
+        jobs.forEach((j)=>{
+        let newDiv = document.createElement('div')
+        newDiv.textContent = j.title
+        result.append(newDiv)
+        })
+    }else{
+        jobs = []
+    }
+}

@@ -35,6 +35,9 @@
             padding: 25px;
             border-radius: 15px;
             margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .input-group {
@@ -85,81 +88,15 @@
             transform: translateY(0);
         }
         
-        .result-section {
-            background: #e3f2fd;
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 25px;
-            display: none;
-        }
-        
-        .result-section.show {
-            display: block;
-        }
-        
-        .weather-icon {
-            text-align: center;
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
-        
-        .temperature {
-            text-align: center;
-            font-size: 48px;
-            color: #1976d2;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        
-        .description {
-            text-align: center;
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .details {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-        
-        .detail-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .detail-item:last-child {
-            border-bottom: none;
-        }
-        
-        .detail-label {
-            font-weight: bold;
-            color: #666;
-        }
-        
-        .detail-value {
-            color: #333;
-        }
-        
-        .advice {
-            background: #fff3cd;
+
+
+        .result{
+            border: 1px solid lightblue;
+            border-radius: 12px;
             padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-            border-right: 4px solid #ffc107;
         }
-        
-        .advice-title {
-            font-weight: bold;
-            color: #856404;
-            margin-bottom: 8px;
-        }
-        
-        .advice-text {
-            color: #856404;
-            line-height: 1.6;
+
+        .result div{
+            margin: 10px;
+            border-bottom: 2px solid lightcoral;
         }
