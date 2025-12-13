@@ -22,7 +22,7 @@ button.addEventListener('click', (e) => {
     newDiv.textContent = inputValue
     let newJob = new Job(inputValue)
     jobs.push(newJob)
-
+    input.value = ''
     result.append(newDiv)
     localStorage.setItem("jobs", JSON.stringify(jobs))
 })
