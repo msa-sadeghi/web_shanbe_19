@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    
+    <title>لیست دینامیک</title>
+    <style>
+        body { font-family: Tahoma; padding: 20px; }
+        .item {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="input-section input-group">
-
-        <input type="text" id="inputItem" placeholder="like: sport">
-        <button class="">Add</button>
-    </div>
-    <div class="result">
-        
-    </div>
-    </div>
+    <h1>لیست خرید</h1>
+    <div id="list"></div>
+    <button onclick="generateList()">تولید لیست</button>
     <script src="app.js"></script>
+   
 </body>
 </html>
