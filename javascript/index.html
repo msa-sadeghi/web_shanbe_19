@@ -2,23 +2,62 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>لیست دینامیک</title>
-    <style>
-        body { font-family: Tahoma; padding: 20px; }
-        .item {
-            padding: 10px;
-            margin: 5px 0;
-            background: #f0f0f0;
-            border-radius: 5px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اپلیکیشن یادداشت</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>لیست خرید</h1>
-    <div id="list"></div>
-    <button onclick="generateList()">تولید لیست</button>
-    <button onclick="clearItems()">خالی کردن لیست</button>
-    <script src="app.js"></script>
-   
+    <div class="container">
+        <div class="header">
+            <h1>📝 اپلیکیشن یادداشت</h1>
+            <p>یادداشت‌های خود را مدیریت کنید</p>
+        </div>
+        
+        <!-- فرم افزودن یادداشت -->
+        <div class="add-note-section">
+            <h2 style="margin-bottom: 20px; color: #667eea;">➕ یادداشت جدید</h2>
+            <div class="form-group">
+                <label>عنوان:</label>
+                <input type="text" id="noteTitle" placeholder="عنوان یادداشت">
+            </div>
+            <div class="form-group">
+                <label>محتوا:</label>
+                <textarea id="noteContent" placeholder="متن یادداشت..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>دسته‌بندی:</label>
+                <select id="noteCategory">
+                    <option value="کاری">کاری</option>
+                    <option value="شخصی">شخصی</option>
+                    <option value="خرید">خرید</option>
+                    <option value="مهم">مهم</option>
+                </select>
+            </div>
+            <button class="btn-add" onclick="addNote()">افزودن یادداشت</button>
+        </div>
+        
+        <!-- آمار -->
+        <div class="stats" id="statsSection"></div>
+        
+        <!-- کنترل‌ها -->
+        <div class="controls">
+            <button onclick="filterNotes('all')">همه یادداشت‌ها</button>
+            <button onclick="filterNotes('کاری')">کاری</button>
+            <button onclick="filterNotes('شخصی')">شخصی</button>
+            <button onclick="filterNotes('خرید')">خرید</button>
+            <button onclick="filterNotes('مهم')">مهم</button>
+            <button onclick="clearAll()" style="background: #f44336; color: white;">🗑️ پاک کردن همه</button>
+        </div>
+        
+        <!-- لیست یادداشت‌ها -->
+        <div class="notes-grid" id="notesGrid">
+            <div class="empty-state">
+                <div class="empty-state-icon">📝</div>
+                <p>یادداشتی وجود ندارد</p>
+                <p style="font-size: 14px; margin-top: 10px;">اولین یادداشت خود را اضافه کنید</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
