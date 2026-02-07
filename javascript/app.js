@@ -1,48 +1,26 @@
-let allNotes = []
-function Note(title, content, category){
-    this.id = Date.now() + Math.random()
-    this.title = title
-    this.content = content
-    this.category = category
-}
-function addNote(){
-    let  noteTitle = document.getElementById("noteTitle").value
-    let  noteContent = document.getElementById("noteContent").value
-    let  noteCategory = document.getElementById("noteCategory").value
-    let n = new Note(noteTitle,  noteContent, noteCategory)
-    allNotes.push(n)
-    renderNotes()
-}
+fetch("https://jsonplaceholder.typicode.com/users")
+.then(response => response.json())
+.then(data => renderUsers(data))
+.catch(error => console.log(error))
 
+const usersElement = document.querySelector(".users")
 
-function  renderNotes(){
-    let notesGrid = document.getElementById("notesGrid")
-    if(allNotes.length === 0){
-        notesGrid.innerHTML = `
-        <div class="empty-state">
-                <div class="empty-state-icon">📝</div>
-                <p>یادداشتی وجود ندارد</p>
-                <p style="font-size: 14px; margin-top: 10px;">اولین یادداشت خود را اضافه کنید</p>
-            </div>
-        `
-        return
-    }
-    notesGrid.innerHTML = ''
-    allNotes.forEach((n)=>{
-        let card =document.createElement("div")
-        card.classList.add("note")
+function renderUsers(users){
+    users.forEach(user => {
+        const userCard = document.createElement("div")
+        userCard.classList.add("note")
+        const header = document.createElement("div")
+        header.classList.add("note-header")
+        const id = document.createElement("span")
+        id.innerText = user.id
+        const name = document.createElement("span")
+        name.innerText = user.name
 
-        let noteTitle = document.createElement("div")
-        noteTitle.classList.add("note-title")
-        noteTitle.textContent = n.title
-        let noteCategory = document.createElement("div")
-        noteTitle.classList.add("note-category")
-        noteTitle.classList.add(`category-${n.category}`)
-        noteTitle.textContent = n.category
+        header.append(id, name)
+        const username = document.createElement("span")
+        username.innerText = user.username
 
-        card.append(noteTitle)
-
-        notesGrid.append(card)
-
-    })
+        userCard.append(header, username)
+        usersElement.append(userCard)
+    });
 }
