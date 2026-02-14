@@ -1,26 +1,29 @@
-fetch("https://jsonplaceholder.typicode.com/users")
-.then(response => response.json())
-.then(data => renderUsers(data))
-.catch(error => console.log(error))
-
-const usersElement = document.querySelector(".users")
-
-function renderUsers(users){
-    users.forEach(user => {
-        const userCard = document.createElement("div")
-        userCard.classList.add("note")
-        const header = document.createElement("div")
-        header.classList.add("note-header")
-        const id = document.createElement("span")
-        id.innerText = user.id
-        const name = document.createElement("span")
-        name.innerText = user.name
-
-        header.append(id, name)
-        const username = document.createElement("span")
-        username.innerText = user.username
-
-        userCard.append(header, username)
-        usersElement.append(userCard)
-    });
-}
+const apiResponse = {
+            success: true,
+            data: {
+                users: [
+                    { id: 1, name: 'علی احمدی', email: 'ali@example.com', age: 25 },
+                    { id: 2, name: 'سارا محمدی', email: 'sara@example.com', age: 22 },
+                    { id: 3, name: 'رضا رضایی', email: 'reza@example.com', age: 28 }
+                ],
+                count: 3
+            }
+        };
+        // Destructuring در سطوح مختلف
+        const { success, data: { users, count } } = apiResponse;
+        
+        console.log(`موفقیت: ${success}`);
+        console.log(`تعداد: ${count}`);
+        
+        // نمایش کاربران با Destructuring
+        const usersContainer = document.getElementById('users');
+        
+        users.forEach(({ name, email, age }) => {
+            usersContainer.innerHTML += `
+                <div class="user-card">
+                    <h3>${name}</h3>
+                    <p>📧 ${email}</p>
+                    <p>🎂 ${age} سال</p>
+                </div>
+            `;
+        });
