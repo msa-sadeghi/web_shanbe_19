@@ -1,13 +1,13 @@
 import "../assets/css/Card.css"
 
-function Card({product}){
+function Card({product, onRemove}){
 
     return(
-        <div className="card">
+        <div className="card" >
             <h2>{product.name}</h2>
             <h3>price: {product.price}</h3>
             <h4>details {product.details}</h4>
-            <button>Remove</button>
+            <button onClick={()=>onRemove(product.id)}>Remove</button>
         </div>
     )
 }
