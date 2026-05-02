@@ -1,8 +1,8 @@
 import './App.css'
-import ProductCard from './components/ProductCard'
+import ProductList from './components/ProductList'
 function App(){
     return (
-        <ProductCard inStock={true} productName="tablet"/>
+        <ProductList/>
     )
 }
 export default App
